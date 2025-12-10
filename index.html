@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Keyboard control</title>
+		<style>
+			* {
+				margin:0;
+				padding:0;
+			}
+
+            
+
+			#box{
+                position: absolute;
+                width: 100px;
+                
+               
+            }
+		</style>
+	</head>	
+	<body>
+
+       <img  id="box" src="image1.png">
+		<script>
+			// const box = document.getElementById("box");
+			// console.log(box)
+			
+			// document.addEventListener("keydown", function(event) {
+			// 	console.log(event.key)
+			// 	const boxPos=box.getBoundingClientRect()
+			// 	// box.style.left=boxPos.x+10+"px"
+			// 	if(event.key==="ArrowRight"){
+			// 		box.style.left=boxPos.x + 10+"px";
+			// 	}
+			// 	else if (event.key==="ArrowLeft"){
+			// 		bos.style.left=boxPos.y + 10+"px";}
+				
+
+			// })
+
+			// function getDistanceBetweenPoints(x1,x2,y1,y2){
+			// 	return Math.sqrt(Math.pow(x2-x1,2)+Math.pow(y2-y1,2))
+				
+			// }
+			// document.addEventListener("mousemove",function(event){
+			// 	const boxPos=box.getBoundingClientRect()
+			// 	document.body.style.left=boxPos.x+ 10 +"px";
+			// 	console.log(getDistanceBetweenPoints(10,10,event.x,event.y));
+
+			// })
+
+        const dvd = document.getElementById("box");
+        const colors = ["red", "blue", "green", "yellow", "pink"];
+
+        let xPosition = 0;
+        let yPosition = 0;
+        let xSpeed = 3;
+        let ySpeed = 3;
+         function changeBackground() {
+            let randomColor = colors[Math.floor(Math.random() * colors.length)];
+            document.body.style.backgroundColor = randomColor;
+        }
+
+        function update() {
+             const w = window.innerWidth;
+             const h = window.innerHeight;
+             const b = box.getBoundingClientRect();
+
+            xPosition = xPosition+xSpeed;
+            yPosition = yPosition+ySpeed;
+
+
+              if (xPosition + b.width >= w) {
+                xSpeed = xSpeed * -1;
+                changeBackground();
+            }
+
+            if (xPosition <= 0) {
+                xSpeed =xSpeed* -1;
+                changeBackground();
+
+            }
+
+            if (yPosition + b.height >= h) {
+                ySpeed = ySpeed* -1;
+                changeBackground();
+            }
+
+            if (yPosition <= 0) {
+                ySpeed =ySpeed* -1;
+                changeBackground();
+            }
+
+            box.style.left = xPosition + "px";
+            box.style.top = yPosition + "px";
+
+            requestAnimationFrame(update);
+        }
+
+        update();
+	
+     </script>
