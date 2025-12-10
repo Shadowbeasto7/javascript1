@@ -12,15 +12,16 @@
 
 			#box{
                 position: absolute;
-                width: 100px;
+                width: 250px;
                 
                
             }
 		</style>
 	</head>	
 	<body>
+		
 
-       <img  id="box" src="image1.png">
+        <img  id="box" src="image1.png">
 		<script>
 			// const box = document.getElementById("box");
 			// console.log(box)
@@ -52,10 +53,10 @@
         const dvd = document.getElementById("box");
         const colors = ["red", "blue", "green", "yellow", "pink"];
 
-        let xPosition = 0;
-        let yPosition = 0;
-        let xSpeed = 3;
-        let ySpeed = 3;
+        let xPosition = 20;
+        let yPosition = 50;
+        let xSpeed = 5;
+        let ySpeed = 5;
          function changeBackground() {
             let randomColor = colors[Math.floor(Math.random() * colors.length)];
             document.body.style.backgroundColor = randomColor;
