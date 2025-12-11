@@ -52,6 +52,13 @@ const ctx=canvas.getContext("2d");
 //  ctx.fill();
 
 ctx.beginPath();
+ctx.rect(0,0,500,500);
+ctx.fillStyle = "skyblue";
+ctx.fill();
+
+
+
+ctx.beginPath();
 ctx.rect(0,360,500,500);
 ctx.fillStyle = "lightgreen";
 ctx.fill();
@@ -202,6 +209,62 @@ ctx.stroke();
 
 ctx.fillStyle = "lightblue";
 ctx.fill();
+
+
+
+ctx.beginPath();
+ctx.arc(125,90,37,0,2*Math.PI);
+ctx.fill();
+ctx.fillStyle="white";
+ctx.strokeStyle="white";
+ctx.stroke()
+ctx.fill();
+
+ctx.beginPath();
+ctx.arc(160,90,45,0,2*Math.PI);
+ctx.fill();
+ctx.fillStyle="white";
+ctx.strokeStyle="white";
+ctx.stroke()
+ctx.fill();
+
+ctx.beginPath();
+ctx.arc(135,60,25,0,2*Math.PI);
+ctx.fill();
+ctx.fillStyle="white";
+ctx.strokeStyle="white";
+ctx.stroke()
+ctx.fill();
+
+ctx.beginPath();
+ctx.arc(200,90,36,0,2*Math.PI);
+ctx.fill();
+ctx.fillStyle="white";
+ctx.strokeStyle="white";
+ctx.stroke()
+ctx.fill();
+
+ctx.beginPath();
+ctx.arc(230,90,30,0,2*Math.PI);
+ctx.fill();
+ctx.fillStyle="white";
+ctx.strokeStyle="white";
+ctx.stroke()
+ctx.fill();
+
+ctx.beginPath();
+ctx.arc(210,79,32,0,2*Math.PI);
+ctx.fill();
+ctx.fillStyle="white";
+ctx.strokeStyle="white";
+ctx.stroke()
+ctx.fill();
+
+// ctx.beginPath();
+// ctx.moveTo(27,400);
+// ctx.lineTo(61, 432);
+// ctx.strokeStyle="green";
+// ctx.stroke();
 
 
 
