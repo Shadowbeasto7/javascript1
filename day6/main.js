@@ -17,8 +17,8 @@ function loop(){
     ctx.clearRect(0,0,500,500);
 
     for(let i=0;i<box.length;i++){
-    box.update();
-    box.draw();
+    box[i].update();
+    box[i].draw();
  }
 }
 loop();
