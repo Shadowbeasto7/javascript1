@@ -1,6 +1,6 @@
 // box.js
 class Box {
-  constructor(x, y, directionX, directionY, image) {
+  constructor(x, y, directionX, directionY, color) {
     this.position = { x, y };
 
     this.size = {
@@ -11,11 +11,10 @@ class Box {
     this.directionX = directionX;
     this.directionY = directionY;
     this.speed = 1;
-
-    this.image = image; // 👈 image stored here
+    this.color = color || "red";
   }
 
-  // collision helpers
+  
   get left() {
     return this.position.x;
   }
@@ -30,6 +29,16 @@ class Box {
 
   get bottom() {
     return this.position.y + this.size.height;
+  }
+
+  draw(ctx) {
+    ctx.fillStyle = this.color;
+    ctx.fillRect(
+      this.position.x,
+      this.position.y,
+      this.size.width,
+      this.size.height
+    );
   }
 
   update(canvas) {
@@ -47,26 +56,6 @@ class Box {
     if (this.top <= 0 || this.bottom >= canvas.height) {
       this.directionY *= -1;
     }
-  }
-
-  draw(ctx) {
-    // optional: draw box border
-    ctx.strokeStyle = "black";
-    ctx.strokeRect(
-      this.position.x,
-      this.position.y,
-      this.size.width,
-      this.size.height
-    );
-
-    // draw image INSIDE the box
-    ctx.drawImage(
-      this.image,
-      this.position.x,
-      this.position.y,
-      this.size.width,
-      this.size.height
-    );
   }
 }
 
