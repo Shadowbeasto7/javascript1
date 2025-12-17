@@ -21,7 +21,7 @@ function isOverlapping(a, b) {
   );
 }
 const img = new Image();
-img.src = "..\day7\image\ram.png"; 
+img.src = "."; 
 
 // create boxes without overlap
 for (let i = 0; i < BOX_COUNT; i++) {
