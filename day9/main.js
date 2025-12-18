@@ -70,6 +70,8 @@ function loop() {
   }
 }
 loop();
+const img = new Image();
+img.src = "./ram.png"; 
 
 document.addEventListener("click", function (e) {
   for (let i = 0; i < boxes.length; i++) {
